@@ -11,7 +11,7 @@ function getWeatherData() {
   $.getJSON("https://cors-anywhere.herokuapp.com/http://freegeoip.net/json/" + myip, function (geoData) {
     var curLat = JSON.stringify(geoData.latitude);
     var curLon = JSON.stringify(geoData.longitude);
-    var curIcon = "https://cors-anywhere.herokuapp.com/http://openweathermap.org/img/w/";
+    var curIcon = "http://openweathermap.org/img/w/";
     var APIKey = "125276a1bb7bead3bcc713aa6a93c9a2";
     var APICoord = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather";
     // fetch JSON data from API
