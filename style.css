@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  background: -webkit-linear-gradient(#000080, #008080);
+  background: linear-gradient(#000080, #008080);
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  padding: 25px 0px;
+  min-width: 300px;
+}
+
+.container {
+  padding: 0px 10px;
+}
+
+h1 {
+  font-size: 3.5em;
+  margin: auto;
+  text-transform: uppercase;
+}
+
+#dspLoc {
+  font-size: 2.5em;
+}
+
+#dspWeather {
+  font-size: 1.75em;
+}
+
+#dspTemp {
+  font-size: 3.5em;
+  font-weight: bold;
+}
+
+#dspButton {
+  margin-bottom: 20px;
+}
+
+#dspWind {
+  font-size: 1.75em;
+}
+
+footer p {
+  margin: auto;
+}
+
+footer a,
+footer a:hover {
+  color: #fff;
+}
+
+
+/* Extra small devices (portrait phones, less than 544px) */
+
+@media (max-width: 543px) {
+  h1 {
+    font-size: 2.5em;
+    margin: auto;
+    text-transform: uppercase;
+  }
+  #dspLoc {
+    font-size: 1.5em;
+  }
+  #dspWeather {
+    font-size: 1.25em;
+  }
+  #dspTemp {
+    font-size: 2.5em;
+    font-weight: bold;
+  }
+  #dspWind {
+    font-size: 1.25em;
+  }
+  footer p {
+    margin: auto;
+  }
+  footer a,
+  footer a:hover {
+    color: #fff;
+  }
+}
