@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
   <title>Local Weather</title>
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -19,21 +19,33 @@
 
 <body>
 
-  <header class="container text-center">
-    <h1>Local Weather</h1>
+  <header>
+    <div class="container">
+      <div class="row">
+        <h1>Local Weather</h1>      
+      </div>
+    </div>
   </header>
 
-  <section class="container text-center">
-    <p><span id="dspLoc">Location...</span> <img id="dspIcon" src="#" alt="weather icon"></p>
-    <p id="dspWeather">Weather condition...</p>
-    <p id="dspTemp"><span id="dspTempValue">0</span>&deg;<span id="dspTempUnit">C</span></p>
-    <button id="dspButton" class="btn btn-default" onclick="convertTemp()" value="degC">&deg;F</button>
-    <p id="dspWind">Wind: <span id="dspWindValue">0</span> m/s</p>
+  <section>
+    <div class="container">
+      <div class="row">
+        <p><span id="dspLoc">Location...</span> <img id="dspIcon" src="#" alt="weather icon"></p>
+        <p id="dspWeather">Weather condition...</p>
+        <p id="dspTemp"><span id="dspTempValue">0</span>&deg;<span id="dspTempUnit">C</span></p>
+        <button id="dspButton" class="btn btn-default" onclick="convertTemp()" value="degC">&deg;F</button>
+        <p id="dspWind">Wind: <span id="dspWindValue">0</span> m/s</p>
+      </div>
+    </div>
   </section>
 
-  <footer class="container text-center">
-    <p>Created by: lleander</p>
-    <p>Powered by: <a href="http://OpenWeatherMap.org" target="_blank">OpenWeatherMap.org</a></p>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <p>Created by: lleander</p>
+        <p>Powered by: <a href="http://OpenWeatherMap.org" target="_blank">OpenWeatherMap.org</a></p>
+      </div>
+    </div>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

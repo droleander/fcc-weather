@@ -1,7 +1,5 @@
 * {
   box-sizing: border-box;
-  margin: 0 auto;
-  padding: 0;
 }
 
 html {
@@ -12,7 +10,7 @@ body {
   background: -webkit-linear-gradient(#000080, #008080);
   background: linear-gradient(#000080, #008080);
   color: #fff;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
   padding: 25px 0px;
   min-width: 300px;
 }
