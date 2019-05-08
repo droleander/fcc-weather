@@ -1,6 +1,6 @@
 function getGeoInfo() {
 	const IPSKEY = "41c009789ef51f4e1b569068ad9cad8e";
-	const IPSAPI = "http://api.ipstack.com/check?access_key=" + IPSKEY;
+	const IPSAPI = "http://api.ipstack.com/" + myip + "?access_key=" + IPSKEY;
 	
 	$.getJSON(IPSAPI, (geoData) => {
 		let lat = geoData.latitude;
