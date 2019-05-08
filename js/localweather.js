@@ -12,7 +12,7 @@ function getGeoInfo() {
 
 function getWeatherInfo(lat, lon) {
 	const OWMKEY = "9e63e3db08ca3fc65ea3925879bdc7b7";
-	const OWMAPI = "http://api.openweathermap.org/data/2.5/weather"; // https://cors-anywhere.herokuapp.com/
+	const OWMAPI = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather"; // https://cors-anywhere.herokuapp.com/
 	
 	$.ajax({
 		url: OWMAPI,
