@@ -19,6 +19,7 @@ body {
 	border: 5px solid #009f9f;
 	border-radius: 20px;
 	margin: 1rem auto!important;
+	padding: 10px !important;
 	width: 95%;
 	text-align: center;
 }
@@ -26,7 +27,6 @@ body {
 h1 {
 	font-size: 3rem;
 	font-weight: bold;
-	margin: auto;
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -36,7 +36,7 @@ h1 {
 }
 
 #dspIcon {
-	width: 4rem;
+	width: 3.5rem;
 }
 
 #dspWeather {
