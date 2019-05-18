@@ -8,7 +8,7 @@ $(document).ready(() => getGeoInfo());
 
 function getGeoInfo() {
     const IPSKEY = "41c009789ef51f4e1b569068ad9cad8e";
-    const IPSAPI = "http://api.ipstack.com/check";
+    const IPSAPI = "https://cors-anywhere.herokuapp.com/http://api.ipstack.com/check";
 	
 	$.ajax({
 		url: IPSAPI,
@@ -23,7 +23,6 @@ function getGeoInfo() {
 			getWeatherInfo(lat, lon);
 		},
 		error: function(geoErr) {
-			console.error(geoErr);
 			alert("Geolocation not available due to " + geoErr.statusText);
 		}
 	});
@@ -33,7 +32,7 @@ function getGeoInfo() {
 
 function getWeatherInfo(lat, lon) {
     const OWMKEY = "9e63e3db08ca3fc65ea3925879bdc7b7";
-    const OWMAPI = "http://api.openweathermap.org/data/2.5/weather";
+    const OWMAPI = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather";
 	
     $.ajax({
         url: OWMAPI,
