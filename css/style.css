@@ -20,8 +20,8 @@ body {
 .container {
 	border: 5px solid #009f9f;
 	border-radius: 20px;
-	margin: 1rem auto!important;
-	padding: 10px !important;
+	margin: 1rem auto !important;
+	padding: 5px;
 	width: 95%;
 	text-align: center;
 }
