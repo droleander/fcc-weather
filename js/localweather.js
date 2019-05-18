@@ -8,9 +8,9 @@ $(document).ready(() => getGeoInfo());
 
 function getGeoInfo() {
 	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(function(position) {
-			let lat = position.coords.latitude;
-			let lon = position.coords.longitude;
+		navigator.geolocation.getCurrentPosition(function(geoData) {
+			let lat = geoData.coords.latitude;
+			let lon = geoData.coords.longitude;
 			
 			getWeatherInfo(lat, lon);
 		});
