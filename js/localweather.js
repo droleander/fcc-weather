@@ -7,39 +7,16 @@ $(document).ready(() => getGeoInfo());
 
 
 function getGeoInfo() {
-	/*
-    const IPSKEY = "41c009789ef51f4e1b569068ad9cad8e";
-    const IPSAPI = "http://api.ipstack.com/check";
-	
-	$.ajax({
-		url: IPSAPI,
-		data: {
-			access_key: IPSKEY
-		},
-		dataType: 'json',
-		success: function(geoData) {
-			let lat = geoData.latitude;
-			let lon = geoData.longitude;
-			
-			getWeatherInfo(lat, lon);
-		},
-		error: function(geoErr) {
-			alert("Geolocation not available due to " + geoErr.statusText);
-		}
-	});
-	*/
-	
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 			let lat = position.coords.latitude;
 			let lon = position.coords.longitude;
 			
-			getWeatherInfo(lat, lon)
+			getWeatherInfo(lat, lon);
 		});
 	} else {
 		alert("Geolocation is not supported by this browser.");
 	}
-	
 }
 
 
@@ -70,7 +47,6 @@ function getWeatherInfo(lat, lon) {
 			alert("Weather data not available due to " + dataErr.statusText);
 		}
 	});
-	
 }
 
 
@@ -105,7 +81,6 @@ function convertTemp() {
     }
 	
     $("#dspTempValue").html(currTemp);
-	
 }
 
 
