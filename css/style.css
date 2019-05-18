@@ -1,18 +1,18 @@
 * {
 	box-sizing: border-box;
-	margin: auto !important;
-	padding: 0 !important;
 }
 
-html,
-body {
-	min-height: 100%;
+html, body {
+	height: 100%;
+	overflow: auto;
 }
 
 body {
 	background: linear-gradient(#000080, #008080);
 	color: #fff;
 	font-family: 'Lato', sans-serif;
+	display: flex;
+	flex-direction: column;
 }
 
 .container {
@@ -29,6 +29,10 @@ h1 {
 	font-size: 2.75rem;
 	text-align: center;
 	text-transform: uppercase;
+}
+
+section {
+	flex: 1 0 auto;
 }
 
 #dspLoc {
@@ -55,6 +59,10 @@ h1 {
 
 #dspWind {
 	font-size: 1.5rem;
+}
+
+footer {
+	flex-shrink: 0;
 }
 
 footer .row {
