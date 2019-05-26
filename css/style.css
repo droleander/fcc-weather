@@ -30,6 +30,7 @@ body {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	margin: 0.5rem auto !important;
 }
 
 h1 {
