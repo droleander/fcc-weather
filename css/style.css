@@ -85,3 +85,9 @@ footer a,
 footer a:hover {
 	color: #fff;
 }
+
+@media screen and (max-width: 320px) {
+	h1 {
+		font-size: 2.25rem;
+	}
+}
