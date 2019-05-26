@@ -53,7 +53,7 @@ async function getWeatherInfo(lat, lon) {
 
 function displayWeather(loc, icon, weather, temp, wind) {
     $("#dspLoc").html(loc);
-    $("#dspIcon").attr("src", icon);
+    $(".dspIcon").attr("src", icon);
     $("#dspWeather").html(weather);
     $("#dspTempValue").html(temp);
     $("#dspWindValue").html(wind);
