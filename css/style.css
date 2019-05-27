@@ -101,4 +101,5 @@ footer .row {
 footer a,
 footer a:hover {
 	color: #fff;
+	text-decoration: none;
 }
