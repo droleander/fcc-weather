@@ -60,6 +60,8 @@ async function getWeatherInfo(lat, lon) {
 		displayWeather(loc, icon, weather, temp, sunrise_time, sunset_time, wind);
 
 	} catch (ex) {
+		$('.dspIcon').css({'display': 'none'});
+		$('#dspWeather').css({'margin-top': 'auto'});
 		alert(`An error has occurred.\nPlease try again later.`);
 	}
 }

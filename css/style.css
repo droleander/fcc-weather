@@ -21,15 +21,20 @@ body {
 	border: 5px solid #009f9f;
 	border-radius: 20px;
 	line-height: 1.5;
-	margin: 0.5rem auto;
+	margin: 1rem auto;
 	min-width: 300px;
 	width: 80%;
 	text-align: center;
 }
 
-.flexi {
+.flexi-temp {
 	display: flex;
-	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.flexi-sun {
+	display: flex;
 	justify-content: space-evenly;
 	margin: 0.25rem auto;
 }
@@ -57,27 +62,24 @@ section .container {
 }
 
 .dspIcon {
-	width: 3.5rem;
+	width: 5.5rem;
 }
 
 #dspWeather {
 	font-size: 1.25rem;
 	font-weight: bold;
+	margin-top: -1rem;
 }
 
 #dspTemp {
-	display: inline-block;
 	font-size: 2.5rem;
-	width: 7rem;
+	flex: 0 0 7rem;
 }
 
 #dspButton {
-	position: relative;
-	display: inline;
 	font-size: 1.25rem;
 	width: 2.25rem;
 	height: 2.25rem;
-	top: -7px;
 }
 
 #dspSunrise,
