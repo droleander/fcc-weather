@@ -38,16 +38,26 @@ async function getWeatherInfo(lat, lon) {
 			dataType: 'json'
 		});
 
-		let loc = data.name;
-		let icon = "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
-		let temp = data.main.temp;
+		let loc = `${data.name}, ${data.sys.country}`;
+		let icon = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+		let temp = data.main.temp.toFixed(0);
+		
 		let weather = data.weather[0].description;
 		weather = weather.substr(0, 1).toUpperCase() + weather.substr(1);
-		let sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
-		let sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString();
+
+		let sunrise = new Date(data.sys.sunrise * 1000);
+		let sunrise_hr = sunrise.getHours();
+		let sunrise_mn = sunrise.getMinutes();
+		let sunrise_time = `${sunrise_hr}:${sunrise_mn} AM`;
+		
+		let sunset = new Date(data.sys.sunset * 1000);
+		let sunset_hr = sunset.getHours() > 12 ? sunset.getHours() - 12: sunset.getHours();
+		let sunset_mn = sunset.getMinutes();
+		let sunset_time = `${sunset_hr}:${sunset_mn} PM`;
+		
 		let wind = data.wind.speed;
 
-		displayWeather(loc, icon, weather, temp, sunrise, sunset, wind);
+		displayWeather(loc, icon, weather, temp, sunrise_time, sunset_time, wind);
 
 	} catch (ex) {
 		alert(`An error has occurred.\nPlease try again later.`);
@@ -73,14 +83,14 @@ function convertTemp() {
 	// C = (5 / 9) * (F - 32); F = ((9 / 5) * C) + 32; //
 
 	if (bttnValue === "degC") {
-		currTemp = parseFloat((((9 / 5) * currTemp) + 32).toFixed(2));
+		currTemp = parseFloat((((9 / 5) * currTemp) + 32).toFixed(0));
 
 		// display info //
 		$("#dspTempUnit").html("F");
 		$("#dspButton").attr("value", "degF").html("&deg;C");
 
 	} else {
-		currTemp = parseFloat(((5 / 9) * (currTemp - 32)).toFixed(2));
+		currTemp = parseFloat(((5 / 9) * (currTemp - 32)).toFixed(0));
 
 		// display info //
 		$("#dspTempUnit").html("C");
@@ -90,50 +100,50 @@ function convertTemp() {
 	$("#dspTempValue").html(currTemp);
 }
 
-/* Sample JSON Response
+	/* Sample JSON Response from https://api.openweathermap.org/data/2.5/weather?lat=14.6760413&lon=121.0437003&units=metric&appid=9e63e3db08ca3fc65ea3925879bdc7b7
 
-{
-	"coord": {
-		"lon": 121,
-		"lat": 14.51
-	},
-	"weather": [
 	{
-		"id": 500,
-		"main": "Rain",
-		"description": "light rain",
-		"icon": "10n"
-	}
-	],
-	"base": "stations",
-	"main": {
-		"temp": 26.98,
-		"pressure": 1011,
-		"humidity": 88,
-		"temp_min": 25.56,
-		"temp_max": 29.44
-	},
-	"visibility": 8000,
-	"wind": {
-		"speed": 1,
-		"deg": 60
-	},
-	"clouds": {
-		"all": 90
-	},
-	"dt": 1558880302,
-	"sys": {
-		"type": 1,
-		"id": 8160,
-		"message": 0.0062,
-		"country": "PH",
-		"sunrise": 1558819596,
-		"sunset": 1558865979
-	},
-	"timezone": 28800,
-	"id": 7091218,
-	"name": "Moonwalk II",
-	"cod": 200
+		"coord": {
+			"lon": 121.04,
+			"lat": 14.68
+		},
+		"weather": [
+			{
+				"id": 802,
+				"main": "Clouds",
+				"description": "scattered clouds",
+				"icon": "03d"
+			}
+		],
+		"base": "stations",
+		"main": {
+			"temp": 31.95,
+			"pressure": 1011,
+			"humidity": 62,
+			"temp_min": 31.67,
+			"temp_max": 32.22
+		},
+		"visibility": 10000,
+		"wind": {
+			"speed": 3.1,
+			"deg": 120
+		},
+		"clouds": {
+			"all": 40
+		},
+		"dt": 1558924666,
+		"sys": {
+			"type": 1,
+			"id": 8160,
+			"message": 0.0053,
+			"country": "PH",
+			"sunrise": 1558905964,
+			"sunset": 1558952406
+		},
+		"timezone": 28800,
+		"id": 1966336,
+		"name": "Bagong Pagasa",
+		"cod": 200
 	}
 
 */

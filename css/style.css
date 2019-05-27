@@ -1,7 +1,7 @@
 * {
 	box-sizing: border-box;
-	margin: 0 !important;
-	padding: 0 !important;
+	margin: 0;
+	padding: 0;
 }
 
 html, body {
@@ -20,17 +20,18 @@ body {
 .container {
 	border: 5px solid #009f9f;
 	border-radius: 20px;
-	margin: 1rem auto !important;
-	padding: 5px;
-	width: 95%;
+	line-height: 1.5;
+	margin: 1rem auto;
+	min-width: 300px;
+	width: 80%;
 	text-align: center;
 }
 
 .flexi {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
-	margin: 0.25rem auto !important;
+	justify-content: space-evenly;
+	margin: 0.25rem auto;
 }
 
 h1 {
@@ -44,8 +45,15 @@ section {
 	flex: 1 0 auto;
 }
 
+section .container {
+	padding: .25rem;
+}
+
+
 #dspLoc {
 	font-size: 1.75rem;
+	font-weight: bold;
+	text-align: center;
 }
 
 .dspIcon {
@@ -53,17 +61,23 @@ section {
 }
 
 #dspWeather {
-	font-size: 1.75rem;
+	font-size: 1.25rem;
+	font-weight: bold;
 }
 
 #dspTemp {
-	font-size: 1.75rem;
+	display: inline-block;
+	font-size: 2.5rem;
+	width: 7rem;
 }
 
 #dspButton {
+	position: relative;
+	display: inline;
 	font-size: 1.25rem;
-	font-weight: bold;
-	padding: 0 .5rem !important;
+	width: 2.25rem;
+	height: 2.25rem;
+	top: -7px;
 }
 
 #dspSunrise,
@@ -85,10 +99,4 @@ footer .row {
 footer a,
 footer a:hover {
 	color: #fff;
-}
-
-@media screen and (max-width: 320px) {
-	h1 {
-		font-size: 2.25rem;
-	}
 }
