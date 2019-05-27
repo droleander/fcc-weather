@@ -40,7 +40,7 @@ async function getWeatherInfo(lat, lon) {
 
 		let loc = `
 			${data.name}, ${data.sys.country}<br>
-			( ${lat.toFixed(2)}, ${lon.toFixed(2)} )
+			( ${lat.toFixed(4)}, ${lon.toFixed(4)} )
 		`;
 
 		let icon = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
