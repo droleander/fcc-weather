@@ -14,7 +14,6 @@ function getGeoInfo() {
 			let lat = geoData.coords.latitude;
 			let lon = geoData.coords.longitude;
 
-			alert(`LAT: ${lat}, LON: ${lon}`);
 			getWeatherInfo(lat, lon);
 		});
 	} else {
@@ -41,8 +40,9 @@ async function getWeatherInfo(lat, lon) {
 
 		let loc = `
 			${data.name}, ${data.sys.country}<br>
-			lat: ${lat.toFixed(2)}, lon: ${lon.toFixed(2)}
+			( ${lat.toFixed(2)}, ${lon.toFixed(2)} )
 		`;
+
 		let icon = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
 		let temp = data.main.temp.toFixed(0);
 		
@@ -70,6 +70,7 @@ async function getWeatherInfo(lat, lon) {
 
 
 function displayWeather(loc, icon, weather, temp, sunrise, sunset, wind) {
+	$("#dspLoc").css({'margin-bottom': '-.75rem'});
 	$("#dspLoc").html(loc);
 	$('.dspIcon').css({'display': 'inline'});
 	$(".dspIcon").attr("src", icon);
