@@ -60,8 +60,6 @@ async function getWeatherInfo(lat, lon) {
 		displayWeather(loc, icon, weather, temp, sunrise_time, sunset_time, wind);
 
 	} catch (ex) {
-		$('.dspIcon').css({'display': 'none'});
-		$('#dspWeather').css({'margin-top': 'auto'});
 		alert(`An error has occurred.\nPlease try again later.`);
 	}
 }
@@ -69,7 +67,9 @@ async function getWeatherInfo(lat, lon) {
 
 function displayWeather(loc, icon, weather, temp, sunrise, sunset, wind) {
 	$("#dspLoc").html(loc);
+	$('.dspIcon').css({'display': 'inline'});
 	$(".dspIcon").attr("src", icon);
+	$("#dspWeather").css({'margin-top': '-1rem'});
 	$("#dspWeather").html(weather);
 	$("#dspTempValue").html(temp);
 	$("#dspSunriseTime").html(sunrise);
