@@ -7,12 +7,12 @@ $(document).ready(function () {
 	getGeoInfo();
 });
 
-
 function getGeoInfo() {
+
 	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(function (geoData) {
-			let lat = geoData.coords.latitude;
-			let lon = geoData.coords.longitude;
+		navigator.geolocation.getCurrentPosition(geoData => {
+			lat = geoData.coords.latitude;
+			lon = geoData.coords.longitude;
 
 			getWeatherInfo(lat, lon);
 		});
@@ -38,10 +38,7 @@ async function getWeatherInfo(lat, lon) {
 			dataType: 'json'
 		});
 
-		let loc = `
-			${data.name}, ${data.sys.country}<br>
-			( ${lat.toFixed(4)}, ${lon.toFixed(4)} )
-		`;
+		let loc = `${data.name}, ${data.sys.country}`;
 
 		let icon = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
 		let temp = data.main.temp.toFixed(0);
