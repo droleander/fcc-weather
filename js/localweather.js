@@ -70,6 +70,7 @@ async function getWeatherInfo(lat, lon) {
 
 
 function displayWeather(loc, icon, weather, temp, sunrise, sunset, wind) {
+	$("#dspDateTime").html(`${new Date().toLocaleString()}`);
 	$("#dspLoc").css({'margin-bottom': '-.75rem'});
 	$("#dspLoc").html(loc);
 	$('.dspIcon').css({'display': 'inline'});
