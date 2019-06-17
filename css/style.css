@@ -55,9 +55,11 @@ section .container {
 }
 
 #dspLoc {
+	color: #fff;
 	font-size: 1.25rem;
 	font-weight: bold;
 	text-align: center;
+	text-decoration: underline;
 }
 
 .dspIcon {
@@ -85,6 +87,14 @@ section .container {
 #dspSunset,
 #dspWind {
 	font-size: 1.25rem;
+}
+
+#dspMap {
+	border: 5px solid #009f9f;
+	border-radius: 20px;
+	height: 200px;
+	margin: 0.5rem auto;
+	width: 96%;
 }
 
 footer {

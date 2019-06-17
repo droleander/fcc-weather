@@ -10,9 +10,15 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="#0033ff">
 	
-	<!--link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"-->
+	<link href="./leaflet/leaflet.css" rel="stylesheet"/>
+	<script src="./leaflet/leaflet.js"></script>
+
+	<link href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" rel="stylesheet"/>
+	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+	
 	<link href="https://fonts.googleapis.com/css?family=Righteous|Lato:300" rel="stylesheet">
 	<link href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' rel="stylesheet" integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+	
 	<link href="./css/style.css" rel="stylesheet">
 	<title>Local Weather</title>
 </head>
@@ -28,7 +34,7 @@
 
 	<section>
 		<div class="container">
-			<p id="dspLoc">Location...</p>
+			<p><a href="#" id="dspLoc" title="Click to show/hide map">Location...</a></p>
 			<img class="dspIcon" src="#" alt="weather icon">
 			<p id="dspWeather">Weather condition...</p>
 			<div class="flexi-temp">
@@ -40,6 +46,7 @@
 				<p id="dspSunset"><i class="far">&#xf185;</i> <span id="dspSunsetTime">00:00 PM</span></p>
 			</div>
 			<p id="dspWind"><i class="fas">&#xf72e;</i> <span id="dspWindValue">0</span> m/s</p>
+			<div id="dspMap">Map...</div>
 		</div>
 	</section>
 
@@ -51,7 +58,6 @@
 	</footer>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<!--script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script-->
 	<!--script src="https://www.l2.io/ip.js?var=myip"></script-->
 	<script src="./js/localweather.js"></script>
 

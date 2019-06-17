@@ -5,6 +5,9 @@
 
 $(document).ready(function () {
 	getGeoInfo();
+	$("#dspLoc").on("click", function () {
+		$("#dspMap").slideToggle();
+	});
 });
 
 function getGeoInfo() {
@@ -20,7 +23,6 @@ function getGeoInfo() {
 		alert("Geolocation is not supported by this browser.");
 	}
 }
-
 
 async function getWeatherInfo(lat, lon) {
 	const OWMKEY = "9e63e3db08ca3fc65ea3925879bdc7b7";
@@ -59,12 +61,12 @@ async function getWeatherInfo(lat, lon) {
 		let wind = data.wind.speed;
 
 		displayWeather(loc, icon, weather, temp, sunrise_time, sunset_time, wind);
+		displayLocation(lat, lon);
 
 	} catch (ex) {
 		alert(`An error has occurred.\nPlease try again later.`);
 	}
 }
-
 
 function displayWeather(loc, icon, weather, temp, sunrise, sunset, wind) {
 	$("#dspDateTime").html(`${new Date().toLocaleString()}`);
@@ -80,6 +82,14 @@ function displayWeather(loc, icon, weather, temp, sunrise, sunset, wind) {
 	$("#dspWindValue").html(wind);
 }
 
+function displayLocation(lat, lon) {
+	const mymap = L.map('dspMap').setView([lat, lon], 13);
+	const marker = L.marker([lat, lon]).addTo(mymap);
+	const attribution = '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>';
+	const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+	const tiles = L.tileLayer(tileUrl, {attribution});
+	tiles.addTo(mymap);
+}
 
 function convertTemp() {
 	let bttnValue = $("#dspButton").attr("value");
