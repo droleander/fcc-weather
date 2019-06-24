@@ -41,7 +41,7 @@ body {
 
 h1 {
 	font-family: 'Righteous', 'Lato', sans-serif;
-	font-size: 2.75rem;
+	font-size: 2rem;
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -92,7 +92,7 @@ section .container {
 #dspMap {
 	border: 5px solid #009f9f;
 	border-radius: 20px;
-	height: 200px;
+	height: 150px;
 	margin: 0.5rem auto;
 	width: 96%;
 }
