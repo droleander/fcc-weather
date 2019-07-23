@@ -54,7 +54,7 @@ async function getWeatherInfo(lat, lon) {
 		let sunrise_time = `${sunrise_hr}:${sunrise_mn} AM`;
 		
 		let sunset = new Date(data.sys.sunset * 1000);
-		let sunset_hr = sunset.getHours() > 12 ? sunset.getHours() - 12: sunset.getHours();
+		let sunset_hr = sunset.getHours() % 12;
 		let sunset_mn = sunset.getMinutes();
 		let sunset_time = `${sunset_hr}:${sunset_mn} PM`;
 		
@@ -69,7 +69,23 @@ async function getWeatherInfo(lat, lon) {
 }
 
 function displayWeather(loc, icon, weather, temp, sunrise, sunset, wind) {
-	$("#dspDateTime").html(`${new Date().toLocaleString()}`);
+	const timestamp = new Date(Date.now());
+	let YYYY = timestamp.getFullYear();
+	let MM = timestamp.getMonth() + 1;
+	MM = MM < 10 ? "0" + MM : MM;
+	let DD = timestamp.getDate();
+	DD = DD < 10 ? "0" + DD : DD;
+
+	let HH = timestamp.getHours();
+	let ampm = HH >= 12 ? "PM" : "AM"
+	HH = HH > 12 ? HH % 12 : HH;
+	let mm = timestamp.getMinutes();
+	mm = mm < 10 ? "0" + mm : mm;
+	let ss = timestamp.getSeconds();
+	ss = ss < 10 ? "0" + ss : ss;
+
+	// $("#dspDateTime").html(`${new Date().toLocaleString()}`);
+	$("#dspDateTime").html(`${YYYY}-${MM}-${DD} ${HH}:${mm}:${ss} ${ampm}`);
 	$("#dspLoc").css({'margin-bottom': '-.75rem'});
 	$("#dspLoc").html(loc);
 	$('.dspIcon').css({'display': 'inline'});
